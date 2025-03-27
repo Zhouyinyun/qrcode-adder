@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片添加二维码工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片添加二维码工具</h1>
+        <div class="upload-section">
+            <div class="upload-box" id="imageUploadBox">
+                <label for="imageUpload">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="upload-text">点击上传背景图片</div>
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+            </div>
+            
+            <div class="upload-box" id="qrcodeUploadBox">
+                <label for="qrcodeUpload">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="upload-text">点击上传二维码图片</div>
+                </label>
+                <input type="file" id="qrcodeUpload" accept="image/*" hidden>
+            </div>
+        </div>
+        
+        <div class="editor-container" id="editorContainer" style="display: none;">
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>二维码大小</label>
+                    <input type="range" id="sizeSlider" min="50" max="300" value="150">
+                </div>
+                
+                <div class="control-group">
+                    <label>二维码透明度</label>
+                    <input type="range" id="opacitySlider" min="0" max="100" value="100">
+                </div>
+                
+                <button id="downloadBtn" class="primary-btn">保存图片</button>
+                <button id="resetBtn" class="secondary-btn">重新上传</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
